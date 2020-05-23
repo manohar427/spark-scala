@@ -10,7 +10,7 @@ object RDDWithCSVFile {
       .master("local")
       .getOrCreate()
 
-    val rdd = sparkSess.sparkContext.textFile("D:\\Practice\\spark-scala\\data\\FL_insurance_sample.csv");
+    val rdd = sparkSess.sparkContext.textFile("D:\\Practice\\spark-scala\\data\\FL_insurance_sample.csv",2);
     
     //println("With Header:"+rdd.count())
     
@@ -35,6 +35,10 @@ object RDDWithCSVFile {
     });
     
     twoColumnRdd.take(5).foreach(println);
+    
+    //Save RDD into text file
+    twoColumnRdd.saveAsTextFile("output/genout");
+    
     
     
   }
