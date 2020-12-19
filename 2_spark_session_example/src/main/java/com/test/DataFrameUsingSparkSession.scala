@@ -11,7 +11,7 @@ object DataFrameUsingSparkSession {
   def main(args: Array[String]): Unit = {
     val sparkSess = SparkSession.builder()
         .appName("SparkSession Example")
-        .master("local")
+       .master("local")
         .getOrCreate()
     
        val rdd = sparkSess.sparkContext.parallelize(Array(1,4,7,9,2,5,1,8));

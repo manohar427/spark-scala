@@ -1,6 +1,6 @@
 package com.test
 
-import org.apache.spark.sql.SparkSession
+
 
 object ClouderaSampleJob extends App{
   val spark = SparkSession.builder()
